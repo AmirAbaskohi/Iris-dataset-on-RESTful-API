@@ -13,4 +13,31 @@ Nonetheless, Rome wasn't built in a day, and neither is mastery (or even profici
 Here I will:
 * Build an API with `Flask`
 * Package my app with `Docker`
-* Deploy with `Google cloud platform`
+
+## Requirments
+* flask
+* flask-restful
+* tensorflow
+* numpy
+* pandas
+* sklearn
+* docker
+
+## How to run?
+First you can train your model. This can be done by running below command in `model` directory:
+```
+python main.py
+```
+
+Then run the flask server by running below command in `api` directory:
+```
+python server.py
+```
+
+Now server is accessible in `0.0.0.0:8080` port.
+
+You can run the apis using postman. Here is an example:
+![1](https://user-images.githubusercontent.com/50926437/130132648-1e798526-cf90-4b64-a0d1-0e57a936e900.png)
+
+
+*Amirhossein Abaskohi*
