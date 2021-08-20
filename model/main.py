@@ -14,6 +14,7 @@ from keras.utils import np_utils
 
 import pickle
 
+# This function evaluate the model using sklearn evaluators
 def evaluate(predicted, actual):
 	print("Accuracy: ", metrics.accuracy_score(actual, predicted))
 	print("Balanced Accuracy: ", metrics.balanced_accuracy_score(actual, predicted))
@@ -29,6 +30,7 @@ data.loc[data["variety"]=="Setosa","variety"] = 0
 data.loc[data["variety"]=="Versicolor","variety"] = 1
 data.loc[data["variety"]=="Virginica","variety"] = 2
 
+# Printing first five elements
 print(data.head())
 
 # Suffling the dataset
@@ -46,7 +48,6 @@ X = normalizer.fit_transform(X)
 total_length = len(data)
 train_length = int(0.8*total_length)
 test_length = int(0.2*total_length)
-
 X_train = X[:train_length]
 X_test = X[train_length:]
 y_train = y[:train_length]
@@ -79,8 +80,7 @@ y_test = np.argmax(y_test, axis=1)
 # Evaluating the results
 evaluate(prediction, y_test)
 
-# Saving the model
-
+# Saving the model and normalizer
 valid_inp = False
 while not valid_inp:
 	inp = input("Save the model? [Y/N]")
